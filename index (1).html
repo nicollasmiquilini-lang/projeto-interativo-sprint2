@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Controle - 1 SIS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a202c;
+            color: white;
+            margin: 0;
+            /* FLEXBOX: Centraliza o painel inteiro no meio
+
+da tela */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .painel-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* RESPONSIVIDADE: Joga os
+
+cartões para baixo em telas pequenas */
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+            /* BOX MODEL: Espaço interno */
+            background: #2d3748;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+
+        }
+
+        .card-dispositivo {
+            background: #4a5568;
+            width: 200px;
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #718096;
+            border-radius: 15px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .lampada-img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .btn-controle {
+            background-color: #48bb78;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-controle:hover {
+            background-color: #38a169;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="painel-container">
+        <div class="card-dispositivo">
+            <h3>Lâmpada 01</h3>
+            <img id="img-lampada" src="pic_bulboff.gif" class="lampada-img">
+
+            <button class="btn-controle" onclick="alternar()">LIGAR / DESLIGAR</button>
+
+        </div>
+        <div class="card-dispositivo">
+            <h3>Status</h3>
+            <p>Sistema Operacional</p>
+            <div style="font-size: 2em; color: #48bb78;
+
+font-weight: bold; margin-top: 20px;">ON</div>
+
+        </div>
+    </div>
+    <script>
+        let acesa = false;
+
+        function alternar() {
+            acesa = !acesa; // Inverte o status (true / false)
+            const img = document.getElementById('img-lampada');
+
+            if (acesa === true) {
+                img.src = "pic_bulbon.gif";
+                console.log("A lâmpada deve acender. Status atual:", acesa);
+            } else {
+                img.src = "pic_bulboff.gif";
+                console.log("A lâmpada deve apagar. Status atual:", acesa);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
