@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Nossa imagem que vai mudar -->
+    <img id="minhaImagem" src="pic_bulboff.gif" width="200">
+    <!-- O botão que aciona a ação -->
+    <button onclick="ligar()">Ligar</button>
+    <button onclick="desligar()">Desligar</button>
+    <!-- Onde o JavaScript vai morar -->
+    <script>
+        // A lógica vai entrar aqui!
+        // Função para ligar
+            function ligar() {
+
+                // 1. O documento (página)
+                // 2. Pega o elemento pelo ID ('minhaImagem')
+                // 3. Muda a fonte (src) para a imagem acesa
+                document.getElementById('minhaImagem').src = 'pic_bulbon.gif';
+            }
+            // Função para desligar
+            function desligar() {
+                document.getElementById('minhaImagem').src = 'pic_bulboff.gif';
+            }
+    </script>
+</body>
+</html>
